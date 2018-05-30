@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC   
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+<hibernate-mapping>
+	<class name="com.models.Booking" table="ticket" catalog="testdb">
+		<id name="username">
+			<generator class="native"></generator>
+		</id>
+		<property name="sex" length="2"/>
+		<property name="begCity" length="10"/>
+		<property name="endCity" length="10"/>
+		<property name="date" length="30"/>
+		<property name="id" length="18"/>
+	</class>
+
+</hibernate-mapping>

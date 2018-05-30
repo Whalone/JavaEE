@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC 
+  "-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+  "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+  
+  <validators>
+  <field name="booking.username">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>姓名不能为空！</message>
+    </field-validator>
+  </field>
+  
+  <field name="booking.sex">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>性别不能为空！</message>
+    </field-validator>
+  </field>
+  
+  <field name="booking.begCity">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>初始城市不能为空！</message>
+    </field-validator>
+  </field>
+  
+  <field name="booking.endCity">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>目的城市不能为空！</message>
+    </field-validator>
+  </field>
+  
+  <field name="booking.date">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>姓名不能为空！</message>
+    </field-validator>
+  </field>
+  
+  <field name="booking.id">
+    <field-validator type="requiredstring">
+      <param name="trim">true</param>
+      <message>身份证不能为空！</message>
+    </field-validator>
+  </field>
+  
+</validators>

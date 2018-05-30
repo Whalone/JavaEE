@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 配制文件的dtd信息 -->
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- 加载驱动 -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<!-- 配置数据库信息 端口 还有数据库名字 --> 
+		<property name="connection.url">jdbc:mysql://localhost:3306/testdb</property>
+		<!-- 制定数据库用户名 -->
+		<property name="connection.username">root</property>
+		<!-- 指定数据库密码 -->
+		<property name="connection.password">123</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<!-- 根据映射文件自动创建表（第一次创建，以后是修改） -->
+		<property name="hbm2ddl.auto">update</property>
+		
+		
+		<!-- 配置映射文件 -->
+		<mapping resource="com/models/Booking.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>

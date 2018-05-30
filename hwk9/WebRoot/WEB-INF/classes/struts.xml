@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="struts-default" namespace="/">
+		
+		<interceptors>
+			<interceptor name="selfInterceptor"
+				class="com.interceptor.PrivilegeInterceptor" />
+
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="selfInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="book" class="com.action.BookingAction"> 
+			<result>/showMsg.jsp</result>
+			<result name="input">/book.jsp</result>
+			<result name="login">/login.jsp</result>
+			<interceptor-ref name="myStack"/>
+		</action> 
+		
+		<action name="login" class="com.action.LoginAction">
+			<result>/book.jsp</result>
+			<result name="input">/login.jsp </result>
+			<result name="login">/login.jsp </result>
+		</action>
+		
+		<action name="regAction" class="com.action.regAction">
+			<result>/login.jsp</result>
+			<result name="input">/register.jsp</result>
+		</action>
+	</package>
+</struts>    

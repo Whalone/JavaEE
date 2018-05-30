@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" extends="struts-default" namespace="/">
+		<action name="book" class="com.action.bookingAction">
+			<result type="redirectAction">
+				<param name="namespace">/</param>
+				<param name="actionName">book</param>
+				<param name="method">getBookings</param>
+			</result>
+			<result name="list">/showMsg.jsp</result>
+		</action>
+	</package>
+</struts>    

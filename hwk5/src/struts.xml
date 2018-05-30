@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+  <package name="default" extends="struts-default" namespace="/">
+    
+    <interceptors>
+		<interceptor name="selfInterceptor"
+			class="com.interceptor.PrivilegeInterceptor" />
+		<interceptor name="selfInterceptorLogOut"
+			class="com.interceptor.PrivilegeInterceptorLogOut" />
+			
+			
+		<interceptor-stack name="myStack">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="selfInterceptor"></interceptor-ref>
+			<interceptor-ref name="selfInterceptorLogOut"></interceptor-ref>
+		</interceptor-stack>
+	</interceptors>
+    
+    <action name="*" class="com.action.FourMethod" method="{1}">
+      <result name="success">/success.jsp</result>
+      <result name="login">/login.jsp</result>
+      <interceptor-ref name="myStack"/>
+    </action>
+    
+    
+    <action name="login" class="com.action.UserAction">
+			<result name="success">/index.jsp</result>
+			<result name="login">/login.jsp</result>
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="selfInterceptorLogOut" />
+			
+		</action>
+  </package>
+</struts>    
